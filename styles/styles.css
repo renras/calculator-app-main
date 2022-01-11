@@ -4,4 +4,100 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+html {
+  background-color: #121212;
+  font-family: "Spartan", sans-serif;
+  font-weight: bold;
+}
+
+#calculator {
+  min-width: 320px;
+  background-color: #3a4764;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 25px 20px;
+}
+
+#calculator #calculator-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#calculator #calculator-header h1 {
+  color: white;
+}
+
+#calculator #calculator-header #theme-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#calculator #calculator-header #theme-controls h2 {
+  font-size: 13px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+#calculator #calculator-header #theme-controls #theme-chooser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+#calculator #calculator-header #theme-controls #theme-chooser #theme-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 55px;
+  color: white;
+  font-size: 13px;
+}
+
+#calculator #calculator-header #theme-controls #theme-chooser #pill {
+  background-color: #232c43;
+  width: 70px;
+  height: 27px;
+  border-radius: 10cm;
+  position: relative;
+}
+
+#calculator #calculator-header #theme-controls #theme-chooser #pill #circle {
+  background-color: #d03f2f;
+  width: 17px;
+  height: 17px;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
 /*# sourceMappingURL=styles.css.map */

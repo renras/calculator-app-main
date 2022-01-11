@@ -59,6 +59,7 @@ $t3-text-dark-blue: hsl(198, 20%, 13%);
 // ## Typography
 
 // ### Font Size
+$text-sm: 13px;
 $text-base: 32px;
 
 // ### Font Family
@@ -68,4 +69,77 @@ $spartan: "Spartan", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  background-color: #121212;
+  font-family: $spartan;
+  font-weight: bold;
+}
+
+#calculator {
+  min-width: 320px;
+  background-color: $t1-main-bg;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px 20px;
+
+  #calculator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      color: $text-white;
+    }
+
+    #theme-controls {
+      display: flex;
+      gap: 25px;
+      align-items: flex-end;
+
+      h2 {
+        font-size: $text-sm;
+        color: $text-white;
+        margin-bottom: 5px;
+      }
+
+      #theme-chooser {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        #theme-number {
+          display: flex;
+          list-style: none;
+          justify-content: space-between;
+          width: 55px;
+          color: $text-white;
+          font-size: $text-sm;
+        }
+
+        #pill {
+          background-color: $t1-secondary-bg;
+          width: 70px;
+          height: 27px;
+          border-radius: 10cm;
+          position: relative;
+
+          #circle {
+            background-color: $t1-key-bg-red;
+            width: 17px;
+            height: 17px;
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 6px;
+            transform: translate(0, -50%);
+          }
+        }
+      }
+    }
+  }
 }
