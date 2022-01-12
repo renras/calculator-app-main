@@ -59,11 +59,20 @@ $t3-text-dark-blue: hsl(198, 20%, 13%);
 // ## Typography
 
 // ### Font Size
-$text-sm: 13px;
+$text-xs: 13px;
+$text-sm: 17px;
+$text-md: 24px;
 $text-base: 32px;
 
 // ### Font Family
 $spartan: "Spartan", sans-serif;
+
+// mixins
+
+@mixin keyShadow($shadowColor, $bgColor) {
+  box-shadow: 0px 3px 0px $shadowColor;
+  background-color: $bgColor;
+}
 
 * {
   padding: 0;
@@ -72,18 +81,23 @@ $spartan: "Spartan", sans-serif;
 }
 
 html {
-  background-color: #121212;
+  background-color: $t1-main-bg;
   font-family: $spartan;
   font-weight: bold;
 }
 
 #calculator {
   min-width: 320px;
+  width: 100%;
+  max-width: 430px;
   background-color: $t1-main-bg;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: 25px 20px;
 
   #calculator-header {
@@ -101,7 +115,7 @@ html {
       align-items: flex-end;
 
       h2 {
-        font-size: $text-sm;
+        font-size: $text-xs;
         color: $text-white;
         margin-bottom: 5px;
       }
@@ -118,28 +132,86 @@ html {
           justify-content: space-between;
           width: 55px;
           color: $text-white;
-          font-size: $text-sm;
+          font-size: $text-xs;
         }
+      }
+      #pill {
+        background-color: $t1-secondary-bg;
+        width: 70px;
+        height: 27px;
+        border-radius: 10cm;
+        position: relative;
 
-        #pill {
-          background-color: $t1-secondary-bg;
-          width: 70px;
-          height: 27px;
-          border-radius: 10cm;
-          position: relative;
-
-          #circle {
-            background-color: $t1-key-bg-red;
-            width: 17px;
-            height: 17px;
-            border-radius: 100%;
-            position: absolute;
-            top: 50%;
-            left: 6px;
-            transform: translate(0, -50%);
-          }
+        #circle {
+          background-color: $t1-key-bg-red;
+          width: 17px;
+          height: 17px;
+          border-radius: 100%;
+          position: absolute;
+          top: 50%;
+          left: 6px;
+          transform: translate(0, -50%);
         }
       }
     }
+  }
+
+  #screen {
+    padding: 22px;
+    background-color: $t1-screen-bg;
+    border-radius: 10px;
+    margin-top: 5px;
+
+    p {
+      font-size: $text-base;
+      color: $text-white;
+      text-align: right;
+    }
+  }
+
+  #keypad {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background-color: $t1-secondary-bg;
+    border-radius: 10px;
+
+    button {
+      height: 60px;
+      border-radius: 10px;
+      border: none;
+      font-family: $spartan;
+      font-weight: bold;
+      font-size: $text-sm;
+      color: $t1-key-bg-orange;
+      cursor: pointer;
+    }
+
+    .numAndOperators {
+      @include keyShadow($t1-key-shadow-orange, $t1-key-bg-orange);
+      font-size: $text-md;
+      color: $t1-key-shadow-dark-blue;
+    }
+
+    #key-reset {
+      grid-column: 1 / span 2;
+      @include keyShadow($t1-key-shadow-dark-blue, $t1-key-bg-dark-blue);
+    }
+
+    #key-del {
+      @include keyShadow($t1-key-shadow-dark-blue, $t1-key-bg-dark-blue);
+    }
+
+    #key-equals {
+      grid-column: 3 / span 2;
+      @include keyShadow($t1-key-shadow-red, $t1-key-bg-red);
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  #calculator #keypad {
+    gap: 20px;
   }
 }
