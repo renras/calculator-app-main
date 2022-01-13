@@ -21,6 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <main>
@@ -42,29 +43,30 @@
           </div>
         </div>
         <div id="screen">
-          <p>399, 381</p>
+          <pre id="screen-text">399381</pre>
         </div>
         <div id="keypad">
-          <button class="numAndOperators" id="key-7">7</button>
-          <button class="numAndOperators" id="key-8">8</button>
-          <button class="numAndOperators" id="key-9">9</button>
+          <button class="number-key" id="key-7">7</button>
+          <button class="number-key" id="key-8">8</button>
+          <button class="number-key" id="key-9">9</button>
           <button id="key-del">DEL</button>
-          <button class="numAndOperators" id="key-4">4</button>
-          <button class="numAndOperators" id="key-5">5</button>
-          <button class="numAndOperators" id="key-6">6</button>
-          <button class="numAndOperators" id="key-+">+</button>
-          <button class="numAndOperators" id="key-1">1</button>
-          <button class="numAndOperators" id="key-2">2</button>
-          <button class="numAndOperators" id="key-3">3</button>
-          <button class="numAndOperators" id="key--">-</button>
-          <button class="numAndOperators" id="key-.">.</button>
-          <button class="numAndOperators" id="key-0">0</button>
-          <button class="numAndOperators" id="key-/">/</button>
-          <button class="numAndOperators" id="key-x">x</button>
+          <button class="number-key" id="key-4">4</button>
+          <button class="number-key" id="key-5">5</button>
+          <button class="number-key" id="key-6">6</button>
+          <button class="operator-key" id="key-plus">+</button>
+          <button class="number-key" id="key-1">1</button>
+          <button class="number-key" id="key-2">2</button>
+          <button class="number-key" id="key-3">3</button>
+          <button class="operator-key" id="key--">-</button>
+          <button id="key-decimal">.</button>
+          <button class="number-key" id="key-0">0</button>
+          <button class="operator-key" id="key-/">/</button>
+          <button class="operator-key" id="key-x">x</button>
           <button id="key-reset">RESET</button>
           <button id="key-equals">=</button>
         </div>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

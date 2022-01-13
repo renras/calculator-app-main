@@ -74,6 +74,12 @@ $spartan: "Spartan", sans-serif;
   background-color: $bgColor;
 }
 
+%number-shared {
+  @include keyShadow($t1-key-shadow-orange, $t1-key-bg-orange);
+  font-size: $text-md;
+  color: $t1-key-shadow-dark-blue;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -162,7 +168,7 @@ html {
     border-radius: 10px;
     margin-top: 5px;
 
-    p {
+    #screen-text {
       font-size: $text-base;
       color: $text-white;
       text-align: right;
@@ -188,10 +194,16 @@ html {
       cursor: pointer;
     }
 
-    .numAndOperators {
-      @include keyShadow($t1-key-shadow-orange, $t1-key-bg-orange);
-      font-size: $text-md;
-      color: $t1-key-shadow-dark-blue;
+    .number-key {
+      @extend %number-shared;
+    }
+
+    .operator-key {
+      @extend %number-shared;
+    }
+
+    #key-decimal {
+      @extend %number-shared;
     }
 
     #key-reset {
