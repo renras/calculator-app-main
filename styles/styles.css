@@ -1,3 +1,11 @@
+#calculator #keypad .number-key, #calculator #keypad .operator-key, #calculator #keypad #key-decimal {
+  -webkit-box-shadow: 0px 3px 0px #b4a597;
+          box-shadow: 0px 3px 0px #b4a597;
+  background-color: #eae3dc;
+  font-size: 24px;
+  color: #404e72;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -118,7 +126,7 @@ html {
   margin-top: 5px;
 }
 
-#calculator #screen p {
+#calculator #screen #screen-text {
   font-size: 32px;
   color: white;
   text-align: right;
@@ -144,14 +152,6 @@ html {
   font-size: 17px;
   color: #eae3dc;
   cursor: pointer;
-}
-
-#calculator #keypad .numAndOperators {
-  -webkit-box-shadow: 0px 3px 0px #b4a597;
-          box-shadow: 0px 3px 0px #b4a597;
-  background-color: #eae3dc;
-  font-size: 24px;
-  color: #404e72;
 }
 
 #calculator #keypad #key-reset {
