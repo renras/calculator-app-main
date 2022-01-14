@@ -101,6 +101,7 @@ html {
 
 #calculator #calculator-header #theme-controls #theme-chooser #theme-number li {
   opacity: 70%;
+  cursor: pointer;
 }
 
 #calculator #calculator-header #theme-controls #theme-chooser #theme-number .active-theme-number {

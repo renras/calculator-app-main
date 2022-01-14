@@ -1,5 +1,22 @@
 $(document).ready(function () {
   let alreadyHaveDecimal = false;
+  let boxShadow;
+
+  // animate button when clicked
+  $("#keypad").mousedown((e) => {
+    if (e.target.tagName === "BUTTON") {
+      boxShadow = e.target.style.boxShadow;
+      e.target.style.boxShadow = "none";
+      e.target.style.transform = "translateY(3px)";
+    }
+  });
+
+  $("#keypad").mouseup((e) => {
+    if (e.target.tagName === "BUTTON") {
+      e.target.style.boxShadow = boxShadow;
+      e.target.style.transform = "translateY(0px)";
+    }
+  });
 
   $("#keypad").click((e) => {
     if (e.target.classList.contains("number-key")) {
