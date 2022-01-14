@@ -139,6 +139,14 @@ html {
           width: 55px;
           color: $text-white;
           font-size: $text-xs;
+
+          li {
+            opacity: 70%;
+          }
+
+          .active-theme-number {
+            opacity: 100%;
+          }
         }
       }
       #pill {

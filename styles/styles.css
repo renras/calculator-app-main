@@ -99,6 +99,14 @@ html {
   font-size: 13px;
 }
 
+#calculator #calculator-header #theme-controls #theme-chooser #theme-number li {
+  opacity: 70%;
+}
+
+#calculator #calculator-header #theme-controls #theme-chooser #theme-number .active-theme-number {
+  opacity: 100%;
+}
+
 #calculator #calculator-header #theme-controls #pill {
   background-color: #232c43;
   width: 70px;

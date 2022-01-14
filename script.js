@@ -75,4 +75,27 @@ $(document).ready(function () {
       }
     }
   });
+
+  //animate theme chooser and highlight active theme number
+  const changeCurrentActiveThemeNumber = (number, pos) => {
+    $(`#theme-number-${number}`).addClass("active-theme-number");
+    $(`#theme-number-${number}`).siblings().removeClass("active-theme-number");
+    $("#circle").animate({
+      left: pos,
+    });
+  };
+
+  $("#theme-number").click((e) => {
+    if (e.target.getAttribute("id") === "theme-number-1") {
+      changeCurrentActiveThemeNumber(1, "6px");
+    }
+
+    if (e.target.getAttribute("id") === "theme-number-2") {
+      changeCurrentActiveThemeNumber(2, "38%");
+    }
+
+    if (e.target.getAttribute("id") === "theme-number-3") {
+      changeCurrentActiveThemeNumber(3, "67%");
+    }
+  });
 });
