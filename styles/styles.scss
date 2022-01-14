@@ -176,11 +176,22 @@ html {
     background-color: $t1-screen-bg;
     border-radius: 10px;
     margin-top: 5px;
+    position: relative;
+    height: 81px;
+    overflow: hidden;
 
-    #screen-text {
-      font-size: $text-base;
-      color: $text-white;
-      text-align: right;
+    #screen-text-container {
+      position: absolute;
+      right: 22px;
+      left: 22px;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+
+      #screen-text {
+        font-size: $text-base;
+        color: $text-white;
+      }
     }
   }
 
